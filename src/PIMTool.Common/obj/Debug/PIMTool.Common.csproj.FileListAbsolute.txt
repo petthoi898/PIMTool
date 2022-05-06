@@ -1,0 +1,9 @@
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\bin\Debug\PIMTool.Common.dll
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\bin\Debug\PIMTool.Common.pdb
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\bin\Debug\Ninject.dll
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\bin\Debug\Ninject.xml
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\obj\Debug\PIMTool.Common.csproj.CoreCompileInputs.cache
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\obj\Debug\PIMTool.Common.csproj.CopyComplete
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\obj\Debug\PIMTool.Common.dll
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\obj\Debug\PIMTool.Common.pdb
+C:\Users\NGUI\Desktop\PIMToolNewest\wpfmvvm_nhibernate\on-boarding-exercise\src\PIMTool.Common\obj\Debug\PIMTool.Common.csproj.AssemblyReference.cache

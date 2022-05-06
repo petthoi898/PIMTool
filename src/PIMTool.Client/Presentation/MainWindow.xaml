@@ -1,0 +1,96 @@
+﻿<Window x:Class="PIMTool.Client.Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PIMTool.Client.Presentation"
+        xmlns:viewmodels ="clr-namespace:PIMTool.Client.Presentation.ViewModel"
+        mc:Ignorable="d"
+        Title="PIMTool" Height="900" Width="1350" ResizeMode="NoResize">
+    <Grid Background="#FFF3F3F3">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:NewProjectViewModel}">
+                <local:NewProject/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ProjectsListViewModel}">
+                <local:ProjectsList/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:UnexpectedErrorViewModel}">
+                <local:UnexpectedError/>
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="1" Content="{Binding SelectedViewModel}"/>
+        <Grid Grid.Row="0" VerticalAlignment="Center" Height="50">
+            <DockPanel>
+                <DockPanel HorizontalAlignment="Left">
+                    <Image Source="../Resources/logo_elca.png" HorizontalAlignment="Left" Margin="10,0,0,0"></Image>
+                    <TextBlock Text="Project Information Management" VerticalAlignment="Center" 
+                               Margin="30,0,0,0" FontSize="18" FontWeight="SemiBold"
+                    ></TextBlock>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,200,0">
+                    <DockPanel>
+                        <TextBlock Text="EN "/>
+                        <TextBlock Text="| FR          Help" Foreground="Blue"/>
+                        <TextBlock Text="                 Log out" Foreground="DarkGray"/>
+                    </DockPanel>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+        <Line Grid.Row="1" X1="0" Y1="20" X2="1500" Y2="20" Stroke="#FFCDCDCD"></Line>
+        <Line 
+            Visibility="{Binding IsUnexpectedError, Converter={StaticResource BooleanToVisibilityConverter}}"
+            Grid.Row="1" X1="160" Y1="20" X2="160" Y2="2000" Stroke="#FFDCD9D9"></Line>
+        <Grid Grid.Row="1"  Margin="0,78.4,0,0" 
+              VerticalAlignment="Top" HorizontalAlignment="Left" 
+              Height="200" Width="200"
+              Visibility="{Binding IsUnexpectedError, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid>
+                <Button
+                    Width="Auto" 
+                    Command="{Binding NavigateProjectsListCommand}"
+                    HorizontalAlignment="Left" Margin="10,0,0,170">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock
+                            HorizontalAlignment="Center" Text="Projects Lists" FontSize="18" FontWeight="SemiBold"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Margin="10,50,5,120" FontSize="18" FontWeight="SemiBold"
+                    Command="{Binding NavigateNewProjectCommand}"
+                    HorizontalAlignment="Left" Width="50">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <TextBlock
+                                     Foreground="#2F85FA"
+                                    HorizontalAlignment="Center" Text="New" FontSize="18" FontWeight="SemiBold" Margin="-2,0,-7.8,0" Width="57"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Height="93" Width="77" Margin="11,80,112,27" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Margin="0,3"
+                    Command="{Binding NavigateNewProjectCommand}"
+                    HorizontalAlignment="Left" Width="50">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <TextBlock
+                                    Foreground="#FFB4B1B1"
+                                    HorizontalAlignment="Center" Text="Project" FontSize="16" FontWeight="SemiBold" Margin="-2,0,-7.8,0" Width="57"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBlock Foreground="#FFB4B1B1" Margin="0,3,2.8,3" Text="Customer" FontWeight="SemiBold" FontSize="16" />
+                    <TextBlock Foreground="#FFB4B1B1" Margin="0,3,2.8,3" Text="Supplier" Height="21" FontWeight="SemiBold" FontSize="16" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
